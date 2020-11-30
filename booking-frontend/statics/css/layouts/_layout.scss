@@ -1,0 +1,89 @@
+@import '../abstracts/variables';
+
+//=======================================
+// lay CON ASIDE
+//=======================================
+.lay-sidebar {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    margin-bottom: $spacing-xl;
+}
+
+@media ($media-lm) {
+    //vuelo aside en 1024
+    .lay-sidebar {
+        flex-direction: row;
+    }
+    .sidebar__main {
+        flex-basis: 100%;
+        margin-right: $spacing-sm;
+        //por slider
+        //overflow: hidden;
+    }
+    .sidebar__aside {
+        flex-basis: px(300);
+        flex-shrink: 0;
+    }
+}
+
+@media ($media-xl) {
+    .sidebar__main {
+        margin-right: $spacing-xl;
+        #wrapper.nota & {
+            margin-right: $spacing-3xl;
+        }
+    }
+}
+
+//=======================================
+// lay al 100%
+//=======================================
+[class^='lay'],
+[class*=' lay'] {
+    width: 100%;
+    padding-right: $spacing-sm;
+    padding-left: $spacing-sm;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+// @media ($media-s) {
+//     [class^='lay'],
+//     [class*=' lay'] {
+//         padding-right: px(20);
+//         padding-left: px(20);
+//     }
+// }
+
+// @media ($media-m) {
+//     [class^='lay'],
+//     [class*=' lay'] {
+//         padding-right: px(20);
+//         padding-left: px(20);
+//     }
+// }
+
+@media ($media-xl) {
+    [class^='lay'],
+    [class*=' lay'] {
+        max-width: px(1340);
+        padding-right: $spacing-xl;
+        padding-left: $spacing-xl;
+    }
+}
+//=======================================
+// Se suma Padding para sacar todos los estacios TOP
+//=======================================
+main {
+    padding-top: $spacing-md;
+}
+
+//=======================================
+// lay al 100% sin paddings ni margins
+//=======================================
+.lay-full-width {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
+}

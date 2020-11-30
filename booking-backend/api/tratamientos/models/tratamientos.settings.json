@@ -33,24 +33,13 @@
       "via": "tratamientos",
       "dominant": true
     },
-    "imagenPrincipal": {
-      "collection": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false
-    },
     "profesionales": {
-      "via": "tratamientos",
-      "collection": "profesionales"
+      "collection": "profesionales",
+      "via": "tratamientos"
     },
     "turnos": {
-      "via": "tratamientos",
-      "collection": "turnos"
+      "collection": "turnos",
+      "via": "tratamientos"
     }
   }
 }
