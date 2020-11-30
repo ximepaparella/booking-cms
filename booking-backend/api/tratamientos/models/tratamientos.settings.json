@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tratamientos",
+  "info": {
+    "name": "Tratamientos",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "duracion": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "richtext"
+    },
+    "valorOnline": {
+      "type": "integer",
+      "required": true
+    },
+    "valorRecepcion": {
+      "type": "integer"
+    },
+    "categorias": {
+      "collection": "categorias",
+      "via": "tratamientos",
+      "dominant": true
+    },
+    "imagenPrincipal": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "profesionales": {
+      "via": "tratamientos",
+      "collection": "profesionales"
+    },
+    "turnos": {
+      "via": "tratamientos",
+      "collection": "turnos"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clientes",
+  "info": {
+    "name": "Clientes",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "apellido": {
+      "type": "string"
+    },
+    "celular": {
+      "type": "integer"
+    },
+    "email": {
+      "type": "email"
+    },
+    "notas": {
+      "type": "richtext"
+    },
+    "turnos": {
+      "via": "clientes",
+      "collection": "turnos",
+      "dominant": true
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profesionales",
+  "info": {
+    "name": "Profesionales",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "celular": {
+      "type": "integer"
+    },
+    "tratamientos": {
+      "collection": "tratamientos",
+      "via": "profesionales",
+      "dominant": true
+    },
+    "turnos": {
+      "collection": "turnos",
+      "via": "profesionales"
+    },
+    "imagenPrincipal": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

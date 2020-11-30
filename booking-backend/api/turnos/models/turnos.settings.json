@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "turnos",
+  "info": {
+    "name": "Turnos",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "tratamientos": {
+      "collection": "tratamientos",
+      "via": "turnos",
+      "dominant": true
+    },
+    "profesionales": {
+      "via": "turnos",
+      "collection": "profesionales",
+      "dominant": true
+    },
+    "fechaTurno": {
+      "type": "date"
+    },
+    "horaTurno": {
+      "type": "time"
+    },
+    "clientes": {
+      "collection": "clientes",
+      "via": "turnos"
+    },
+    "estadoPago": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    }
+  }
+}
